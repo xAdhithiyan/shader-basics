@@ -31,7 +31,7 @@ Shader "Unlit/NewUnlitShader"
 
     struct MeshData // per vertex mesh data
     {
-      float4 vertex : POSITION;
+      float4 vertex : POSITION; 
       float2 uv0 : TEXCOORD0; // uv cordinates have a min of (0,0) and a max of (1,1)
       float3 normal: NORMAL; 
       float4 color: COLOR;

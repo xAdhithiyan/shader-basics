@@ -1,0 +1,25 @@
+In shaders, each vertex is a point, and the values between two points are automatically interpolated.
+Fresnel Effect
+shaders -> properties and sub shaders 
+		sub shaders -> pass -> vertex shader(foreach vertex) and fragment(foreach fragment/pixel) shader
+shaders vs material(material contains the color,values and textures which has a reference to a shader)
+BarryCentric -> interpolation of 3 points of the triangle
+swizling -> extracting component from a vector
+
+Spaces in unity 
+object/local space -> refers to the coordinate system relative the current gameObject origin. So changing the tranform/rotation of the object will affect the axis.
+world space -> refers to the coordinate system relative to the global scene. 
+clip space
+
+lerping vs inverse lerping
+TAU scales the output to the range (-1, 1) when the input is (0,1)
+Blending
+
+depth buffer (before painters algorithm was used) -> each pixel has a z-index value that represnts depth from camera
+ZWrite Off -> diables writing into the depth buffer
+ZTest Always -> doesnt read from the depth buffer
+
+tesslation shader -> can subdivide traingles
+
+Textures -> a texture is basically an image that gets mapped to the surface of an object rgt
+Sampling textures in world space or based on uv coordinate;
