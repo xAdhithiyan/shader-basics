@@ -1,3 +1,4 @@
+VID 1 
 In shaders, each vertex is a point, and the values between two points are automatically interpolated.
 Fresnel Effect
 shaders -> properties and sub shaders 
@@ -23,3 +24,29 @@ tesslation shader -> can subdivide traingles
 
 Textures -> a texture is basically an image that gets mapped to the surface of an object rgt
 Sampling textures in world space or based on uv coordinate;
+
+mip maps
+
+VID 2
+Linear change vs radial change vs angular change
+mesh -> 3d geometry of an object formed by vertices and triangles
+mask -> binary (on/off), used to control visibility 
+
+every pixel in a shader is represnted as a vector
+signed disatnce field (SDF)-> each pixel is determined by the distance of the pixel from a point (signed includes -ve distance as well)
+clip(), step(), fwidth(), reflect()
+
+lighting
+	-diffuse lighting (light is evenly spread across when it hits a matt surfaces -> it is a lot softer) 
+		lambertian lighting
+			
+	-specular lighting(light falling on a gloss surface -> shinning effect)
+		phong lighting
+		binn phong lighting(better then phong)
+		
+brdf(Bidirectional Reflectance Distribution Function (defines how light is scattered) -> examples diffuse and specular reflection)
+pbr(Physically Based Rendering) -> a brdf can be used to generate pbr
+since pbr tries to simulate real world lighting energy conservation(amount of light going is equal to the amount of light coming out considering there is no absorption) is present here.
+forward and deferred rendering
+
+orthographic(ignore depth) vs perspective(gives depth in scene) camera in unity
