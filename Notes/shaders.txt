@@ -27,7 +27,7 @@ Sampling textures in world space or based on uv coordinate;
 
 mip maps
 
-VID 2
+VID 2	
 Linear change vs radial change vs angular change
 mesh -> 3d geometry of an object formed by vertices and triangles
 mask -> binary (on/off), used to control visibility 
@@ -47,6 +47,30 @@ lighting
 brdf(Bidirectional Reflectance Distribution Function (defines how light is scattered) -> examples diffuse and specular reflection)
 pbr(Physically Based Rendering) -> a brdf can be used to generate pbr
 since pbr tries to simulate real world lighting energy conservation(amount of light going is equal to the amount of light coming out considering there is no absorption) is present here.
-forward and deferred rendering
+forward rendering(every object in the scene is rendered seperately for each light) and deferred rendering (stores all surface data in G-buffer and applies it to all the pixels -> lighting is calculated once per pixel) 
+
+baked(lighting is pre computed), realtime and mixed(baked for objects that set as static and dynamic for other stuff) lighting mode
+lightmap -> create 'lighting settings' (texels -> each unit in a texture)
 
 orthographic(ignore depth) vs perspective(gives depth in scene) camera in unity
+post processing, skybox material
+
+VID 3
+create custom cginc
+multipass shaders for multiple light sources
+albedo -> base color of the surface 
+
+normal map -> stores the surface normals(for every pixel / texels) to work lighting with complex surface like bumps and wrinkles -> usally used in tangent space
+	we get a normal map by baking a high poly model and then we use it with the low poly model
+	so each coordinate of the normal in the normal map has a range from -1 to 1 which is then remapped to 0 to 1. 
+	so a straight surface will have 0 0 1 (when range is -1 to 1) and when remapped to 0 to 1 it would be 0.5 0.5 1 which gives the purple look
+tangent space is set up by using a matrix of the normal, tangent and bi-tangent (a vector can be converted from tangent to world space by multiplying with the matrix)
+
+height/displacement maps
+ambient light
+	- just add a color to diffuse lighting
+	- ibl (image based lighting -> lighting done based on environment textures) -> diffuse and specular ibl
+
+multiplying will reduce value and adding will increase value when range is btw 0 and 1
+ray marching, ssr, render texture
+	

@@ -8,9 +8,7 @@ Shader "Unlit/SpecularLighting" {
         Tags { "RenderType"="Opaque" }
 
         Pass {
-            Tags {
-                "LightMode" = "ForwardBase"
-             }
+
             
             CGPROGRAM
             #pragma vertex vert
